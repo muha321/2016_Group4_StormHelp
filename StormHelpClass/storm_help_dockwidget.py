@@ -86,7 +86,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         #GUI
         self.Pages.setCurrentIndex(0)
-        uf.showMessage(self.iface, 'Strong winds! Keep out of red areas!', type='Info', lev=1, dur=10)
+        uf.showMessage(self.iface, 'Strong winds! Keep out of red marked areas!', type='Info', lev=1, dur=10)
 
         # change pages
         self.button_startNew.clicked.connect(self.startNew)
@@ -104,6 +104,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_startNew12.clicked.connect(self.startNew)
         self.button_startNew13.clicked.connect(self.startNew)
         self.button_startNew14.clicked.connect(self.startNew)
+        self.button_startNew15.clicked.connect(self.startNew)
 
 
 
@@ -196,6 +197,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.table_emergencies.cellClicked.connect(self.selectSelectedItem)
         self.button_calculateRoute2.clicked.connect(self.buildNetwork)
         self.button_calculateRoute2.clicked.connect(self.calculateRoute)
+        self.button_deleteEmergencyCheck.clicked.connect(self.deleteEmergencyCheck)
+
 
         # page 12 - choose safehouse, hospital or other destination
         self.button_showOther.clicked.connect(self.showOther)
@@ -216,6 +219,12 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.table_hospital.cellClicked.connect(self.selectSelectedItem)
         self.button_calculateRoute14.clicked.connect(self.buildNetwork)
         self.button_calculateRoute14.clicked.connect(self.calculateRoute)
+
+
+        # page 15 - delete emergency
+        self.button_deleteEmergency.clicked.connect(self.deleteEmergency)
+        self.button_notDeleteEmergency.clicked.connect(self.notDeleteEmergency)
+
 
 
     def handleDoubleClick(self, point, buttons):
@@ -445,6 +454,10 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.selectSelectedItem()
 
+    # page 11 - emergencies
+    def deleteEmergencyCheck(self):
+        self.Pages.setCurrentIndex(15)
+
 
     # page 12
     def showOther(self):
@@ -559,6 +572,38 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             item1.setSelected(True)
 
         self.selectSelectedItem()
+
+
+
+    # page 15 - delete emergency
+    def deleteEmergency(self):
+
+        emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
+
+        emergency_layer.startEditing()
+
+        emergency_layer.deleteSelectedFeatures()
+
+        emergency_layer.commitChanges()
+
+        self.canvas.refresh()
+
+        self.showEmergency()
+
+        self.Pages.setCurrentIndex(11)
+
+        uf.showMessage(self.iface, 'The emergency has been removed from the list!', type='Info', lev=3, dur=4)
+
+
+
+
+
+
+    def notDeleteEmergency(self):
+
+        self.Pages.setCurrentIndex(11)
+
+
 
 
 
@@ -729,7 +774,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         if not feat:
 
-            uf.showMessage(self.iface, 'Street not found. Try again!', type='Info', lev=1, dur=4)
+            uf.showMessage(self.iface, 'Street not found. Try again!', type='Info', lev=2, dur=4)
 
             return
 
@@ -958,7 +1003,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.canvas.refresh()
 
-        uf.showMessage(self.iface, 'The blocking has been saved succesfully!', type='Info', lev=1, dur=4)
+        uf.showMessage(self.iface, 'The blocking has been saved succesfully!', type='Info', lev=3, dur=4)
 
         self.startNew()
 
@@ -1024,7 +1069,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         emergency_layer.dataProvider().updateExtents()
         self.iface.setActiveLayer(emergency_layer)
         self.canvas.refresh()
-        print('savenow')
+        uf.showMessage(self.iface, 'Your emergency has been added to the list!', type='Info', lev=3, dur=4)
 
         self.Pages.setCurrentIndex(7)
 
@@ -1060,9 +1105,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.canvas.refresh()
 
-        uf.showMessage(self.iface, 'Your emergency has been saved succesfully!', type='Info', lev=3, dur=4)
-        self.startNew()
-
+        uf.showMessage(self.iface, 'Your information has been saved succesfully!', type='Info', lev=3, dur=4)
+        #self.startNew()
 
 
 
