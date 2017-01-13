@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/plugins/StormHelpClass" >
+        <file>icons/icon.png</file>
+        <file>icons/cross.png</file>
+        <file>icons/house.png</file>
+        <file>icons/112.PNG</file>
+        <file>icons/weather.PNG</file>
+        <file>icons/weather2.PNG</file>
+        <file>icons/weather3.PNG</file>
+    </qresource>
+</RCC>
