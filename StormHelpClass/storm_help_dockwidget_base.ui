@@ -12,7 +12,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>465</width>
+    <width>475</width>
     <height>735</height>
    </size>
   </property>
@@ -42,7 +42,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>11</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page0">
        <widget class="QPushButton" name="button_needHelp">
@@ -50,20 +50,20 @@
          <rect>
           <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -73,22 +73,22 @@
        <widget class="QPushButton" name="button_wantToHelp">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>572</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -129,6 +129,46 @@
          <bool>false</bool>
         </property>
        </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas0" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_showMap">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Show Map</string>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas0</zorder>
+       <zorder>button_needHelp</zorder>
+       <zorder>button_wantToHelp</zorder>
+       <zorder>button_showWeather</zorder>
+       <zorder>button_showMap</zorder>
       </widget>
       <widget class="QWidget" name="page1">
        <widget class="QPushButton" name="button_leave">
@@ -136,20 +176,26 @@
          <rect>
           <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -160,22 +206,22 @@ my current location</string>
        <widget class="QPushButton" name="button_stay">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -183,119 +229,7 @@ my current location</string>
 my current location</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_startNew2">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>20</y>
-          <width>401</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Start New</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_showWeather2">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>60</y>
-          <width>402</width>
-          <height>402</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>402</width>
-          <height>402</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>402</width>
-          <height>402</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>380</width>
-          <height>380</height>
-         </size>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="page2">
-       <widget class="QPushButton" name="button_correctLocation">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>continue</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_wrongLocation">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>choose location on map</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>510</x>
-          <y>260</y>
-          <width>221</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>this is page 2</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_startNew">
+       <widget class="QPushButton" name="button_startNew1">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -317,35 +251,35 @@ my current location</string>
          </size>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
-       <widget class="QgsMapCanvas" name="QgsMapCanvas" native="true">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas1" native="true">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>10</y>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </size>
         </property>
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="label_10">
          <property name="geometry">
           <rect>
            <x>100</x>
-           <y>-10</y>
+           <y>60</y>
            <width>200</width>
            <height>100</height>
           </rect>
@@ -364,32 +298,168 @@ my current location</string>
          </property>
         </widget>
        </widget>
-       <zorder>QgsMapCanvas</zorder>
+       <zorder>QgsMapCanvas1</zorder>
+       <zorder>button_leave</zorder>
+       <zorder>button_stay</zorder>
+       <zorder>button_startNew1</zorder>
+      </widget>
+      <widget class="QWidget" name="page2">
+       <widget class="QPushButton" name="button_correctLocation">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>470</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>continue</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_wrongLocation">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>choose location on map</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_startNew2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>401</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>401</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>60</y>
+           <width>200</width>
+           <height>100</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; color:#ffff00;&quot;&gt;You are here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+       <zorder>QgsMapCanvas2</zorder>
        <zorder>button_correctLocation</zorder>
        <zorder>button_wrongLocation</zorder>
-       <zorder>label_5</zorder>
-       <zorder>button_startNew</zorder>
+       <zorder>button_startNew2</zorder>
       </widget>
       <widget class="QWidget" name="page3">
        <widget class="QPushButton" name="button_endChosen">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -401,20 +471,20 @@ my current location</string>
          <rect>
           <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -422,7 +492,7 @@ my current location</string>
 on map</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_startNew3">
+       <widget class="QPushButton" name="button_goBack3">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -432,7 +502,7 @@ on map</string>
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="inputStreet">
@@ -470,45 +540,32 @@ on map</string>
          <string>OK</string>
         </property>
        </widget>
-       <widget class="QgsMapCanvas" name="QgsMapCanvas2" native="true">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas3" native="true">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>10</y>
           <width>402</width>
-          <height>360</height>
+          <height>670</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>402</width>
-          <height>360</height>
+          <height>670</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </size>
         </property>
-        <widget class="QLabel" name="label_7">
-         <property name="geometry">
-          <rect>
-           <x>120</x>
-           <y>50</y>
-           <width>211</width>
-           <height>111</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Where do you want to go?</string>
-         </property>
-        </widget>
        </widget>
-       <zorder>QgsMapCanvas2</zorder>
+       <zorder>QgsMapCanvas3</zorder>
        <zorder>button_endChosen</zorder>
        <zorder>button_chooseEnd</zorder>
-       <zorder>button_startNew3</zorder>
+       <zorder>button_goBack3</zorder>
        <zorder>inputStreet</zorder>
        <zorder>button_searchStreet</zorder>
       </widget>
@@ -516,26 +573,35 @@ on map</string>
        <widget class="QPushButton" name="button_reportBlocking">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
         <property name="text">
-         <string>report a blocking</string>
+         <string>report blocking</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
         </property>
        </widget>
        <widget class="QPushButton" name="button_helpAtEmergency">
@@ -543,24 +609,33 @@ on map</string>
          <rect>
           <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
         <property name="text">
-         <string>help at an emergency</string>
+         <string>help at emergency</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
         </property>
        </widget>
        <widget class="QPushButton" name="button_startNew4">
@@ -573,46 +648,38 @@ on map</string>
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_showWeather3">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas4" native="true">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>10</y>
           <width>402</width>
-          <height>402</height>
+          <height>671</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>402</width>
-          <height>402</height>
+          <height>360</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>402</width>
-          <height>402</height>
+          <width>2000</width>
+          <height>2000</height>
          </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>380</width>
-          <height>380</height>
-         </size>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
         </property>
        </widget>
+       <zorder>QgsMapCanvas4</zorder>
+       <zorder>button_reportBlocking</zorder>
+       <zorder>button_helpAtEmergency</zorder>
+       <zorder>button_startNew4</zorder>
       </widget>
       <widget class="QWidget" name="page5">
-       <widget class="QPushButton" name="button_startNew5">
+       <widget class="QPushButton" name="button_goBack5">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -622,7 +689,7 @@ on map</string>
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QPushButton" name="button_chooseRoad">
@@ -630,14 +697,14 @@ on map</string>
          <rect>
           <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -654,11 +721,17 @@ road(s) on map</string>
        <widget class="QPushButton" name="button_saveBlocking">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
         </property>
         <property name="maximumSize">
          <size>
@@ -670,110 +743,60 @@ road(s) on map</string>
          <string>save blocking</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_8">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>50</y>
-          <width>311</width>
-          <height>121</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Choose one or more roads that are blocked</string>
-        </property>
-       </widget>
-       <widget class="QgsMapCanvas" name="QgsMapCanvas3" native="true">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas5" native="true">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>10</y>
           <width>402</width>
-          <height>360</height>
+          <height>670</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>402</width>
-          <height>360</height>
+          <height>670</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </size>
         </property>
        </widget>
+       <zorder>QgsMapCanvas5</zorder>
+       <zorder>button_goBack5</zorder>
+       <zorder>button_chooseRoad</zorder>
+       <zorder>button_saveBlocking</zorder>
       </widget>
       <widget class="QWidget" name="page6">
-       <widget class="QLabel" name="label_9">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>70</y>
-          <width>151</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>You are here</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_correctLocation2">
+       <widget class="QPushButton" name="button_startNavigation6">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
-         <string>continue</string>
+         <string>start navigation</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_wrongLocation2">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>choose location on map</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_startNew6">
+       <widget class="QPushButton" name="button_goBack6">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -783,9 +806,34 @@ road(s) on map</string>
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas6" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas6</zorder>
+       <zorder>button_startNavigation6</zorder>
+       <zorder>button_goBack6</zorder>
       </widget>
       <widget class="QWidget" name="page7">
        <widget class="QTextBrowser" name="textBrowser">
@@ -805,7 +853,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Your location has been reported.&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;We suggest you provide further information to help authorities to find you.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you are in need of immediate help please call 112.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you are in need of immediate help please call 112.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;CANVAS HERE&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QPushButton" name="button_provideInformation">
@@ -830,32 +881,7 @@ p, li { white-space: pre-wrap; }
          </size>
         </property>
         <property name="text">
-         <string>provide further information</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_call112">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>call 112</string>
+         <string>report location</string>
         </property>
        </widget>
        <widget class="QPushButton" name="button_startNew7">
@@ -868,12 +894,12 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
       </widget>
       <widget class="QWidget" name="page8">
-       <widget class="QPushButton" name="button_startNew8">
+       <widget class="QPushButton" name="button_goBack8">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -883,7 +909,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QLabel" name="policeLabel">
@@ -891,9 +917,21 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>20</x>
           <y>70</y>
-          <width>391</width>
-          <height>591</height>
+          <width>400</width>
+          <height>600</height>
          </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>600</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>600</height>
+         </size>
         </property>
         <property name="text">
          <string>TextLabel</string>
@@ -910,45 +948,57 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="button_saveInformation">
         <property name="geometry">
          <rect>
-          <x>220</x>
+          <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
-         <string>Save</string>
+         <string>report location</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_startNew9">
+       <widget class="QPushButton" name="button_goBack9">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>113</width>
-          <height>32</height>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
          </rect>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>401</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>401</width>
+          <height>41</height>
+         </size>
+        </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>40</y>
-          <width>391</width>
-          <height>421</height>
+          <x>40</x>
+          <y>80</y>
+          <width>361</width>
+          <height>351</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
+        <layout class="QGridLayout" name="grid_details">
          <item row="2" column="1">
           <widget class="QLineEdit" name="input_address"/>
          </item>
@@ -1001,9 +1051,72 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </widget>
+       <widget class="QPushButton" name="button_call112">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>call 112</string>
+        </property>
+       </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas9" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_details">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>80</y>
+          <width>361</width>
+          <height>351</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas9</zorder>
+       <zorder>frame_details</zorder>
+       <zorder>button_saveInformation</zorder>
+       <zorder>button_goBack9</zorder>
+       <zorder>layoutWidget</zorder>
+       <zorder>button_call112</zorder>
       </widget>
       <widget class="QWidget" name="page10">
-       <widget class="QPushButton" name="button_startNew11">
+       <widget class="QPushButton" name="button_startNew10">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1013,22 +1126,22 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QPushButton" name="button_wrongLocation10">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -1046,46 +1159,52 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
          <string>continue</string>
         </property>
        </widget>
-       <widget class="QgsMapCanvas" name="QgsMapCanvas4" native="true">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas10" native="true">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>60</y>
+          <y>10</y>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>402</width>
-          <height>360</height>
+          <height>670</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </size>
         </property>
         <widget class="QLabel" name="label_4">
          <property name="geometry">
           <rect>
            <x>100</x>
-           <y>-10</y>
+           <y>20</y>
            <width>200</width>
            <height>100</height>
           </rect>
@@ -1104,38 +1223,38 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </widget>
-       <zorder>QgsMapCanvas4</zorder>
-       <zorder>button_startNew11</zorder>
+       <zorder>QgsMapCanvas10</zorder>
+       <zorder>button_startNew10</zorder>
        <zorder>button_wrongLocation10</zorder>
        <zorder>button_correctLocation10</zorder>
       </widget>
       <widget class="QWidget" name="page11">
-       <widget class="QPushButton" name="button_calculateRoute2">
+       <widget class="QPushButton" name="button_calculateRoute11">
         <property name="geometry">
          <rect>
-          <x>220</x>
+          <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
          <string>calculate route</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_startNew10">
+       <widget class="QPushButton" name="button_goBack11">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1145,109 +1264,180 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QTableWidget" name="table_emergencies">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>25</x>
           <y>60</y>
-          <width>402</width>
-          <height>402</height>
+          <width>390</width>
+          <height>290</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>402</width>
-          <height>402</height>
+          <width>390</width>
+          <height>290</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>402</width>
-          <height>402</height>
+          <width>390</width>
+          <height>390</height>
          </size>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_deleteEmergencyCheck">
+       <widget class="QPushButton" name="button_deleteEmergencyCheck11">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
          <string>delete emergency</string>
         </property>
        </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas11" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_showOnMap">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>370</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>show on map</string>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas11</zorder>
+       <zorder>button_calculateRoute11</zorder>
+       <zorder>button_goBack11</zorder>
+       <zorder>table_emergencies</zorder>
+       <zorder>button_deleteEmergencyCheck11</zorder>
+       <zorder>button_showOnMap</zorder>
       </widget>
       <widget class="QWidget" name="page12">
        <widget class="QPushButton" name="button_showShelter">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <y>370</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
         <property name="text">
-         <string/>
+         <string>Shelter</string>
         </property>
         <property name="iconSize">
          <size>
-          <width>190</width>
-          <height>190</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
        </widget>
        <widget class="QPushButton" name="button_showHospital">
         <property name="geometry">
          <rect>
-          <x>220</x>
+          <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
         <property name="text">
-         <string/>
+         <string>Hospital</string>
         </property>
         <property name="iconSize">
          <size>
-          <width>190</width>
-          <height>190</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_startNew12">
+       <widget class="QPushButton" name="button_goBack12">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1257,75 +1447,123 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QPushButton" name="button_showOther">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>270</y>
-          <width>402</width>
-          <height>200</height>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>402</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
-         <string>choose other destination</string>
+         <string>other destination</string>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="page13">
-       <widget class="QLabel" name="label">
+       <widget class="QTextBrowser" name="textBrowser_3">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>470</y>
-          <width>200</width>
+          <x>25</x>
+          <y>80</y>
+          <width>390</width>
           <height>200</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;select a shelter to view&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;on the map&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_calculateRoute13">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>200</width>
+          <width>390</width>
           <height>200</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
+          <width>390</width>
           <height>200</height>
+         </size>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Where do you want to go?&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;The municipality provides temporary accommodation and&lt;br /&gt;initial medical aid in a number of emergency shelters in the city.&lt;br /&gt;To choose from a list of shelters select the &lt;/span&gt;&lt;span style=&quot; color:#008000;&quot;&gt;GREEN HOUSE&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you need further medical attention select the &lt;span style=&quot; color:#ff0000;&quot;&gt;RED CROSS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas12" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas12</zorder>
+       <zorder>button_showShelter</zorder>
+       <zorder>button_showHospital</zorder>
+       <zorder>button_goBack12</zorder>
+       <zorder>button_showOther</zorder>
+       <zorder>textBrowser_3</zorder>
+      </widget>
+      <widget class="QWidget" name="page13">
+       <widget class="QPushButton" name="button_calculateRoute13">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
          <string>calculate route</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="button_startNew13">
+       <widget class="QPushButton" name="button_goBack13">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1335,28 +1573,80 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QTableWidget" name="table_shelter">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>25</x>
           <y>60</y>
-          <width>402</width>
+          <width>390</width>
           <height>402</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>402</width>
+          <width>390</width>
           <height>402</height>
          </size>
         </property>
        </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas13" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_showOnMap13">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>470</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>show on map</string>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas13</zorder>
+       <zorder>button_calculateRoute13</zorder>
+       <zorder>button_goBack13</zorder>
+       <zorder>table_shelter</zorder>
+       <zorder>button_showOnMap13</zorder>
       </widget>
       <widget class="QWidget" name="page14">
-       <widget class="QPushButton" name="button_startNew14">
+       <widget class="QPushButton" name="button_goBack14">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1366,57 +1656,108 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
         </property>
        </widget>
        <widget class="QPushButton" name="button_calculateRoute14">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
          <string>calculate route</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;select a hospital&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;to view on map&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
        <widget class="QTableWidget" name="table_hospital">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>25</x>
           <y>60</y>
+          <width>390</width>
+          <height>390</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>390</width>
+          <height>390</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>390</width>
+          <height>390</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas14" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>402</width>
-          <height>402</height>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
          </size>
         </property>
        </widget>
+       <widget class="QPushButton" name="button_showOnMap14">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>470</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>show on map</string>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas14</zorder>
+       <zorder>button_goBack14</zorder>
+       <zorder>button_calculateRoute14</zorder>
+       <zorder>table_hospital</zorder>
+       <zorder>button_showOnMap14</zorder>
       </widget>
       <widget class="QWidget" name="page15">
        <widget class="QPushButton" name="button_deleteEmergency">
@@ -1424,20 +1765,20 @@ p, li { white-space: pre-wrap; }
          <rect>
           <x>20</x>
           <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -1453,22 +1794,22 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="button_notDeleteEmergency">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>470</y>
-          <width>200</width>
-          <height>200</height>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
-          <height>200</height>
+          <width>400</width>
+          <height>100</height>
          </size>
         </property>
         <property name="text">
@@ -1484,20 +1825,37 @@ p, li { white-space: pre-wrap; }
        <widget class="QTextBrowser" name="textBrowser_2">
         <property name="geometry">
          <rect>
-          <x>100</x>
-          <y>100</y>
-          <width>256</width>
-          <height>192</height>
+          <x>20</x>
+          <y>60</y>
+          <width>402</width>
+          <height>402</height>
          </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>402</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>402</height>
+         </size>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;This will permanently delete the emergency from the map. &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please do not delete an emergency, if you are not sure&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;the person is not in need of help anymore&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;the person is not in need of help anymore.&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Proceed?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
@@ -1512,7 +1870,510 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="text">
-         <string>Start New</string>
+         <string>Back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page16">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas16" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_goBack16">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>401</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>401</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page17">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas17" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <widget class="QTextBrowser" name="textRouteInfo">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>80</y>
+           <width>256</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Your route takes long&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="button_startNew17">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_startNavigation">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>start navigation</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page18">
+       <widget class="QPushButton" name="button_goBack18">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QgsMapCanvas" name="QgsMapCanvas18" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_calculateRoute18">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>calculate route</string>
+        </property>
+       </widget>
+       <zorder>QgsMapCanvas18</zorder>
+       <zorder>button_goBack18</zorder>
+       <zorder>button_calculateRoute18</zorder>
+      </widget>
+      <widget class="QWidget" name="page19">
+       <widget class="QLabel" name="labelNavigation">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>391</width>
+          <height>591</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_goBack19">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page20">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas20" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <zorder>button_startNew20</zorder>
+        <zorder>button_calculateRoute20</zorder>
+        <zorder>button_deleteEmergencyCheck20</zorder>
+       </widget>
+       <widget class="QPushButton" name="button_deleteEmergencyCheck20">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>delete emergency</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_calculateRoute20">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>470</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>calculate route</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_startNew20">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page21">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas21" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_goBack21">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_calculateRoute21">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>calculate route</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page22">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas22" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_goBack22">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_startNavigation22">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>start navigation</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page23">
+       <widget class="QgsMapCanvas" name="QgsMapCanvas23" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>402</width>
+          <height>670</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>402</width>
+          <height>670</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_goBack23">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_startNavigation23">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>570</y>
+          <width>400</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>start navigation</string>
         </property>
        </widget>
       </widget>

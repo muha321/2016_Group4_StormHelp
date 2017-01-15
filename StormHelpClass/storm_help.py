@@ -20,8 +20,10 @@
  *                                                                         *
  ***************************************************************************/
 """
-from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt
+from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt, QPoint
 from PyQt4.QtGui import QAction, QIcon
+#from PyQt4 import QtGui, QtCore, uic
+
 # Initialize Qt resources from file resources.py
 import resources
 
@@ -200,7 +202,7 @@ class StormHelpClass:
 
         for action in self.actions:
             self.iface.removePluginMenu(
-                self.tr(u'&Storm Help 3'),
+                self.tr(u'&Storm Help'),
                 action)
             self.iface.removeToolBarIcon(action)
         # remove the toolbar
@@ -228,6 +230,10 @@ class StormHelpClass:
 
             # show the dockwidget
             # TODO: fix to allow choice of dock location
-            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
+            #self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
+            self.dockwidget.setFloating(True)
+            self.dockwidget.move(QPoint(200, 100))
+
+            self.dockwidget.setWindowTitle("Storm Help")
             self.dockwidget.show()
 

@@ -136,6 +136,9 @@
     <edittype widgetv2type="TextEdit" name="wegnr_aw">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
+    <edittype widgetv2type="TextEdit" name="nOfTrees">
+      <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
   </edittypes>
   <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
     <symbols>
@@ -149,7 +152,7 @@
           <prop k="joinstyle" v="bevel"/>
           <prop k="line_color" v="162,161,158,255"/>
           <prop k="line_style" v="solid"/>
-          <prop k="line_width" v="0.26"/>
+          <prop k="line_width" v="0.18"/>
           <prop k="line_width_unit" v="MM"/>
           <prop k="offset" v="0"/>
           <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -334,6 +337,7 @@
   <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
     <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
       <fontProperties description=".SF NS Text,13,-1,5,50,0,0,0,0,0" style=""/>
+      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
     <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
       <layer pass="0" class="SimpleMarker" locked="0">
@@ -406,6 +410,7 @@
     <alias field="routeltr4" index="42" name=""/>
     <alias field="routenr4" index="43" name=""/>
     <alias field="wegnr_aw" index="44" name=""/>
+    <alias field="nOfTrees" index="45" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -458,6 +463,7 @@
       <column width="-1" hidden="0" type="field" name="routenr4"/>
       <column width="-1" hidden="0" type="field" name="wegnr_aw"/>
       <column width="-1" hidden="1" type="actions"/>
+      <column width="-1" hidden="0" type="field" name="nOfTrees"/>
     </columns>
   </attributetableconfig>
   <editform></editform>
