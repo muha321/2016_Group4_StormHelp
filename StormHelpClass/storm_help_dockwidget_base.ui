@@ -412,7 +412,7 @@ my current location</string>
           <height>670</height>
          </size>
         </property>
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="label_here2">
          <property name="geometry">
           <rect>
            <x>100</x>
@@ -428,7 +428,11 @@ my current location</string>
           </size>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; color:#ffff00;&quot;&gt;You are here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; color:#ffff00;     text-shadow:
+-1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; &quot;&gt;You are here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1100,6 +1104,9 @@ p, li { white-space: pre-wrap; }
           <width>361</width>
           <height>351</height>
          </rect>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>

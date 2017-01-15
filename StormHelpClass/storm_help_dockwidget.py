@@ -76,7 +76,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # define globals
         self.iface = iface
-        self.canvas = self.iface.mapCanvas()
+        #self.canvas = self.iface.mapCanvas()
 
         #GUI
         #uf.showMessage(self.iface, 'Strong winds! Keep out of red marked areas!', type='Info', lev=1, dur=10)
@@ -109,16 +109,16 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
 
         # actions
-        self.toolPan = QgsMapToolPan(self.canvas)
-        self.toolZoom = QgsMapToolZoom(self.canvas, 0)
-        self.canvas.setMapTool(self.toolZoom)
+        #self.toolPan = QgsMapToolPan(self.canvas)
+        #self.toolZoom = QgsMapToolZoom(self.canvas, 0)
+        #self.canvas.setMapTool(self.toolZoom)
 
         #self.emitPoint = QgsMapToolEmitPoint(self.canvas)
         #self.emitPoint.canvasClicked.connect(self.getPoint)
 
-        maptool = MapToolEmitPoint(self.canvas)
-        self.canvas.setMapTool(maptool)
-        maptool.canvasDoubleClicked.connect(self.handleDoubleClick)
+        #maptool = MapToolEmitPoint(self.canvas)
+        #self.canvas.setMapTool(maptool)
+        #maptool.canvasDoubleClicked.connect(self.handleDoubleClick)
 
 
         # page 0 - choose to give or take help
@@ -149,6 +149,13 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_correctLocation.clicked.connect(self.correctLocationRoute)
         self.button_wrongLocation.clicked.connect(self.activateLocalization)
         #self.button_wrongLocation.setStyle(QtGui.QStyleFactory.create("QMacStyle))
+
+        #pen = QtGui.QPen()
+        #pen.setStyle(Qt.DashDotLine)
+        self.label_here2.setTextFormat(QtCore.Qt.RichText)
+
+
+        self.label_here2.setText("<font size = 15 color = yellow > You are here </font> ")
 
 
 
@@ -502,7 +509,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.Pages.setCurrentIndex(0)
 
-        self.canvas.setMapTool(self.toolZoom)
+        #self.canvas.setMapTool(self.toolZoom)
 
         # list of layers that should be removed
         remove_layer = ["Routes", "Buffer", "emergency_temp", "location", "destination", "obstacle_temp", "Temp_Network"]
@@ -1066,7 +1073,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
                 obstacle_temp = uf.getLegendLayerByName(self.iface, "obstacle_temp")
                 roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
 
-                # this is only still needed if user doesn't come from helpAtEmergency, e.g. clicks save blocking before clicks choose blocked roads
+                #this is only still needed if user doesn't come from helpAtEmergency, e.g. clicks save blocking before clicks choose blocked roads
                 if not obstacle_temp:
 
                     print('here')
@@ -1081,14 +1088,10 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
                     uf.loadTempLayer(obstacle_temp)
                     self.activateCanvas()
 
-
                 # get featID of closest road
                 featID = self.nearestFeature(mapPoint)
-
                 feat = uf.getFeatureById(roads_layer, featID)
-
                 blockedPoint = feat.geometry().centroid().asPoint()
-
                 self.chooseLocation(obstacle_temp, blockedPoint)
 
 
@@ -1121,7 +1124,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         # obstacle temp is fine like this actually, but destination layer not having visible is annoying
 
         self.canvas = self.determineCanvas()
-        #self.canvas.refresh()
+        self.canvas.refresh()
 
 
 
