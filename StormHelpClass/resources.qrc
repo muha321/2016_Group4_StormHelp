@@ -9,5 +9,7 @@
         <file>icons/weather.PNG</file>
         <file>icons/weather2.PNG</file>
         <file>icons/weather3.PNG</file>
+        <file>icons/weather4.PNG</file>
+        <file>icons/navigation.jpg</file>
     </qresource>
 </RCC>

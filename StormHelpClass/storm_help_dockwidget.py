@@ -89,7 +89,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_startNew4.clicked.connect(self.startNew)
         self.button_goBack5.clicked.connect(self.goBack)
         self.button_goBack6.clicked.connect(self.goBack)
-        self.button_startNew7.clicked.connect(self.goBack)
+        self.button_goBack7.clicked.connect(self.goBack)
         self.button_goBack8.clicked.connect(self.goBack)
         self.button_goBack9.clicked.connect(self.startNew)
         self.button_startNew10.clicked.connect(self.startNew)
@@ -125,14 +125,10 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.Pages.setCurrentIndex(0)
         self.activateCanvas()
         self.button_showMap.clicked.connect(self.showMap)
-
+        self.button_showWeather.clicked.connect(self.showWeather)
 
         self.button_needHelp.clicked.connect(self.needHelp)
         self.button_needHelp.setStyleSheet("font: bold 14px;")
-        #self.button_needHelp.setStyle(QtGui.QStyleFactory.create("QMacStyle"))
-
-
-
 
         self.button_wantToHelp.clicked.connect(self.wantToHelp)
         self.button_wantToHelp.setStyleSheet("font: bold 14px;")
@@ -152,12 +148,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         #pen = QtGui.QPen()
         #pen.setStyle(Qt.DashDotLine)
-        self.label_here2.setTextFormat(QtCore.Qt.RichText)
-
-
-        self.label_here2.setText("<font size = 15 color = yellow > You are here </font> ")
-
-
+        #self.label_here2.setTextFormat(QtCore.Qt.RichText)
+        #self.label_here2.setText("<font size = 15 color = yellow > You are here </font> ")
 
         # page 3 - choose destination of route
         self.button_searchStreet.clicked.connect(self.searchStreet)
@@ -177,6 +169,9 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # page 6 - route from streetname
         self.button_startNavigation6.clicked.connect(self.startNavigation)
+
+        # page 7 - weather info
+        self.label_weather7.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/weather4.PNG'))
 
         # page 8 - calling 112
         self.policeLabel.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/112.PNG'))
@@ -233,6 +228,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         # page 18 - calculate route to shelter
         self.button_calculateRoute18.clicked.connect(self.showRouteInfo)
 
+        # page 19 - weather info
+        self.label_navigation19.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/navigation.jpg'))
 
         # page 20 - show selected thing on map
         self.button_calculateRoute20.clicked.connect(self.showRouteInfo)
@@ -281,6 +278,9 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         elif self.Pages.currentIndex() == 6:
             self.Pages.setCurrentIndex(3)
+
+        elif self.Pages.currentIndex() == 7:
+            self.Pages.setCurrentIndex(0)
 
         elif self.Pages.currentIndex() == 8:
             self.Pages.setCurrentIndex(9)
@@ -527,7 +527,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
             if layer.name() in remove_layer:
 
-                QgsMapLayerRegistry.instance().removeMapLayers([layer])
+                QgsMapLayerRegistry.instance().removeMapLayers([layer.id()])
 
         roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
 
@@ -540,23 +540,38 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         if self.Pages.currentIndex() == 11 or self.Pages.currentIndex() == 20:
             self.Pages.setCurrentIndex(17)
-            self.calculateRoute()
+            routeLength = self.calculateRoute()
             self.activateCanvas()
+            label = self.label_RouteInfo17
 
         elif self.Pages.currentIndex() == 13 or self.Pages.currentIndex() == 18:
             self.Pages.setCurrentIndex(22)
-            self.calculateRoute()
+            routeLength = self.calculateRoute()
             self.activateCanvas()
+            label = self.label_RouteInfo22
+
 
         elif self.Pages.currentIndex() == 14 or self.Pages.currentIndex() == 21:
             self.Pages.setCurrentIndex(23)
-            self.calculateRoute()
+            routeLength = self.calculateRoute()
             self.activateCanvas()
+            label = self.label_RouteInfo23
+
 
         elif self.Pages.currentIndex() == 3:
             self.Pages.setCurrentIndex(6)
-            self.calculateRoute()
+            routeLength = self.calculateRoute()
             self.activateCanvas()
+            label = self.label_RouteInfo6
+
+        routeLength = routeLength/1000
+        routeTime = str(int(0.5 * routeLength))
+        routeLength = "{:.1f}".format(routeLength)
+        label.setTextFormat(QtCore.Qt.RichText)
+        label.setText("<font size = 10 color = blue ><b>" + routeTime + " min  </b></font> " +
+                      "<font size = 4 color = black >" + str(routeLength)  + " km </font> ")
+
+
 
 
 
@@ -564,6 +579,11 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
     def showMap(self):
         self.Pages.setCurrentIndex(16)
         self.activateCanvas()
+
+    def showWeather(self):
+        self.Pages.setCurrentIndex(7)
+
+
 
 
     def needHelp(self):
@@ -1340,16 +1360,17 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
             #self.legendInterface().refreshLayerSymbology(self.vlayer)
 
-            # length of route
-            route = routes_layer.getFeatures().next()
-            print(route.geometry().length())
+
 
 
         # zoom on route
         layer = uf.getLegendLayerByName(self.iface, "Roads")
-        self.zoomToSelectedFeature(2, layer)
-
+        self.zoomToSelectedFeature(1.7, layer)
         layer.removeSelection()
+
+        # length of route
+        route = routes_layer.getFeatures().next()
+        return route.geometry().length()
 
 
 
