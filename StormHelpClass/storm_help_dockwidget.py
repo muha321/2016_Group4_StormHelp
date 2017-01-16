@@ -97,14 +97,17 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_goBack12.clicked.connect(self.goBack)
         self.button_goBack13.clicked.connect(self.goBack)
         self.button_goBack14.clicked.connect(self.goBack)
-        self.button_startNew15.clicked.connect(self.goBack)
+        self.button_goBack15.clicked.connect(self.goBack)
         self.button_startNew17.clicked.connect(self.goBack)
         self.button_goBack18.clicked.connect(self.goBack)
-        self.button_goBack19.clicked.connect(self.startNew)
+        self.button_goBack19.clicked.connect(self.goBack)
         self.button_startNew20.clicked.connect(self.goBack)
         self.button_goBack21.clicked.connect(self.goBack)
         self.button_goBack22.clicked.connect(self.goBack)
         self.button_goBack23.clicked.connect(self.goBack)
+        self.button_goBack24.clicked.connect(self.goBack)
+        self.button_goBack25.clicked.connect(self.goBack)
+        self.button_goBack26.clicked.connect(self.goBack)
 
 
 
@@ -139,17 +142,22 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         # page 1 - leave or stay
         self.button_leave.clicked.connect(self.leaveLocation)
         self.button_stay.clicked.connect(self.stayLocation)
+        self.label_here1.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
+
 
 
         # page 2
         self.button_correctLocation.clicked.connect(self.correctLocationRoute)
         self.button_wrongLocation.clicked.connect(self.activateLocalization)
-        #self.button_wrongLocation.setStyle(QtGui.QStyleFactory.create("QMacStyle))
+        self.label_here2.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
 
         #pen = QtGui.QPen()
         #pen.setStyle(Qt.DashDotLine)
         #self.label_here2.setTextFormat(QtCore.Qt.RichText)
-        #self.label_here2.setText("<font size = 15 color = yellow > You are here </font> ")
+        # self.label_here2.setText("<font size = 15 color = yellow > You are here </font> ")
+        # dse = QtGui.QGraphicsDropShadowEffect()
+        # dse.setBlurRadius(100)
+        # self.label_here2.setGraphicsEffect(dse)
 
         # page 3 - choose destination of route
         self.button_searchStreet.clicked.connect(self.searchStreet)
@@ -159,9 +167,11 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # page 4 - choose to report blocking or help out at an emergency
         self.button_reportBlocking.clicked.connect(self.reportBlocking)
-        self.button_reportBlocking.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/tree.png'))
+        self.button_reportBlocking.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/tree2.png'))
         self.button_helpAtEmergency.clicked.connect(self.helpAtEmergency)
-        self.button_helpAtEmergency.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/couple.png'))
+        self.button_helpAtEmergency.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/couple2.png'))
+        self.label_here4.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
+
 
         # page 5 - choose and save blocking
         self.button_chooseRoad.clicked.connect(self.activateLocalization)
@@ -185,6 +195,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         #self.button_correctLocation10.clicked.connect(self.showEmergency)
         self.button_correctLocation10.clicked.connect(self.correctLocationHelp)
         self.button_wrongLocation10.clicked.connect(self.activateLocalization)
+        self.label_here10.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
+
 
         # page 11 - choose emergency and calculate route
         self.table_emergencies.cellClicked.connect(self.selectSelectedItem)
@@ -198,8 +210,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_showShelter.clicked.connect(self.showShelter)
         self.button_showHospital.clicked.connect(self.showHospital)
 
-        self.button_showShelter.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/house.png'))
-        self.button_showHospital.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/cross.png'))
+        self.button_showShelter.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/house2.png'))
+        self.button_showHospital.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/cross2.png'))
 
 
         # page 13 - shelters
@@ -217,10 +229,12 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # page 15 - delete emergency
         self.button_deleteEmergency.clicked.connect(self.deleteEmergency)
-        self.button_notDeleteEmergency.clicked.connect(self.notDeleteEmergency)
+        self.button_notDeleteEmergency.clicked.connect(self.goBack)
 
         # page 16 - shows full screen map
         self.button_goBack16.clicked.connect(self.goBack)
+        self.label_here16.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
+
 
         # page 17 - show route emergency
         self.button_startNavigation.clicked.connect(self.startNavigation)
@@ -228,13 +242,12 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         # page 18 - calculate route to shelter
         self.button_calculateRoute18.clicked.connect(self.showRouteInfo)
 
-        # page 19 - weather info
-        self.label_navigation19.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/navigation.jpg'))
+        # page 19 - navigation
+        self.label_navigation19.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/route.PNG'))
 
         # page 20 - show selected thing on map
         self.button_calculateRoute20.clicked.connect(self.showRouteInfo)
         self.button_deleteEmergencyCheck20.clicked.connect(self.deleteEmergencyCheck)
-
 
         # page 21 - calculate route to hospital
         self.button_calculateRoute21.clicked.connect(self.showRouteInfo)
@@ -244,6 +257,16 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # page 23 - show route hospital
         self.button_startNavigation23.clicked.connect(self.startNavigation)
+
+        # page 24 - navigation
+        self.label_navigation24.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/route.PNG'))
+
+        # page 25 - navigation
+        self.label_navigation25.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/route.PNG'))
+
+        # page 26 - navigation
+        self.label_navigation26.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/route.PNG'))
+
 
 
 
@@ -296,15 +319,24 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         elif self.Pages.currentIndex() == 13:
             self.Pages.setCurrentIndex(12)
+            # remove destination_layer after user doen't want to go to a self choosen destination anymore
+            destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
+            QgsMapLayerRegistry.instance().removeMapLayers([destination_layer])
 
         elif self.Pages.currentIndex() == 14:
             self.Pages.setCurrentIndex(12)
+            # remove destination_layer after user doen't want to go to a self choosen destination anymore
+            destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
+            QgsMapLayerRegistry.instance().removeMapLayers([destination_layer])
 
         elif self.Pages.currentIndex() == 3:
             self.Pages.setCurrentIndex(12)
             # remove destination_layer after user doen't want to go to a self choosen destination anymore
-            destination_layer = uf.getLegendLayerByName(self.iface, "destination")
+            destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
             QgsMapLayerRegistry.instance().removeMapLayers([destination_layer])
+
+        elif self.Pages.currentIndex() == 15:
+            self.Pages.setCurrentIndex(11)
 
         elif self.Pages.currentIndex() == 21:
             self.Pages.setCurrentIndex(14)
@@ -321,6 +353,18 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         elif self.Pages.currentIndex() == 23:
             self.Pages.setCurrentIndex(14)
 
+        elif self.Pages.currentIndex() == 25:
+            self.Pages.setCurrentIndex(22)
+
+        elif self.Pages.currentIndex() == 24:
+            self.Pages.setCurrentIndex(23)
+
+        elif self.Pages.currentIndex() == 19:
+            self.Pages.setCurrentIndex(17)
+
+        elif self.Pages.currentIndex() == 26:
+            self.Pages.setCurrentIndex(6)
+
 
         remove_layer = ["Routes", "Buffer"]
         # remove selection on all layers
@@ -328,7 +372,10 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         for layer in layers:
 
             if layer.name() in remove_layer:
-                QgsMapLayerRegistry.instance().removeMapLayers([layer])
+                try:
+                    QgsMapLayerRegistry.instance().removeMapLayers([layer])
+                except:
+                    pass
 
         self.canvas = self.determineCanvas()
         self.toolPan = QgsMapToolPan(self.canvas)
@@ -431,6 +478,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.Pages.setCurrentIndex(0)
 
+
         scenario_open = False
         scenario_file = os.path.join(os.path.dirname(__file__),'sample_data','project_file2.qgs')
         # check if file exists
@@ -444,6 +492,11 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
                 self.iface.addProject(unicode(new_file))
                 scenario_open = True
 
+        uf.showMessage(self.iface, 'Strong winds! Keep out of red marked areas!', type='Info', lev=1, dur=10)
+
+
+
+
 
     def closeEvent(self, event):
         self.closingPlugin.emit()
@@ -456,21 +509,24 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         box = layer.boundingBoxOfSelected()
         box.scale(scale)
+        self.canvas = self.determineCanvas()
         self.canvas.setExtent(box)
+        #self.canvas.zoomScale(50000)
         self.canvas.refresh()
 
 
-    def zoomToLocation(self):
+    def zoomToLocation(self, scale):
 
         canvas = self.determineCanvas()
 
-        layer = uf.getLegendLayerByName(self.iface, "location")
+        layer = uf.getLegendLayerByName(self.iface, "Location")
 
         layer.dataProvider().updateExtents()
 
         self.canvas.setExtent(layer.extent())
         self.canvas.zoomToSelected()
-        self.canvas.zoomByFactor(0.3)
+        #self.canvas.zoomByFactor(0.3)
+        self.canvas.zoomScale(scale)
 
 
 
@@ -495,7 +551,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         canvas = self.determineCanvas()
 
         self.canvas.zoomToSelected(layer)
-        self.canvas.zoomByFactor(0.25)
+        #self.canvas.zoomByFactor(0.25)
+        self.canvas.zoomScale(3000)
 
 
 
@@ -512,7 +569,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         #self.canvas.setMapTool(self.toolZoom)
 
         # list of layers that should be removed
-        remove_layer = ["Routes", "Buffer", "emergency_temp", "location", "destination", "obstacle_temp", "Temp_Network"]
+        remove_layer = ["Routes", "Buffer", "Emergency_Temp", "Destination", "Obstacle_Temp", "Temp_Network"]
         #remove_selection_layers = []
 
         # remove selection on all layers
@@ -527,7 +584,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
             if layer.name() in remove_layer:
 
-                QgsMapLayerRegistry.instance().removeMapLayers([layer.id()])
+                QgsMapLayerRegistry.instance().removeMapLayers([layer])
 
         roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
 
@@ -538,32 +595,58 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
     def showRouteInfo(self):
 
+
+
         if self.Pages.currentIndex() == 11 or self.Pages.currentIndex() == 20:
             self.Pages.setCurrentIndex(17)
-            routeLength = self.calculateRoute()
-            self.activateCanvas()
+            layer = uf.getLegendLayerByName(self.iface, "Emergencies")
             label = self.label_RouteInfo17
+            destinationChosenByClicking = False
 
         elif self.Pages.currentIndex() == 13 or self.Pages.currentIndex() == 18:
             self.Pages.setCurrentIndex(22)
-            routeLength = self.calculateRoute()
-            self.activateCanvas()
+            layer = uf.getLegendLayerByName(self.iface, "Shelters")
             label = self.label_RouteInfo22
-
+            destinationChosenByClicking = False
 
         elif self.Pages.currentIndex() == 14 or self.Pages.currentIndex() == 21:
             self.Pages.setCurrentIndex(23)
-            routeLength = self.calculateRoute()
-            self.activateCanvas()
+            layer = uf.getLegendLayerByName(self.iface, "Hospitals")
             label = self.label_RouteInfo23
-
+            destinationChosenByClicking = False
 
         elif self.Pages.currentIndex() == 3:
             self.Pages.setCurrentIndex(6)
-            routeLength = self.calculateRoute()
-            self.activateCanvas()
             label = self.label_RouteInfo6
+            # no need to create a destination layer, so:
+            destinationChosenByClicking = True
 
+        if not destinationChosenByClicking:
+            # save selected shelter/hospital/emergency in destination layer
+            destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
+            if not destination_layer:
+
+                emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
+                destination_layer = uf.createTempLayer('Destination', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
+
+                symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'red'})
+                symbol.setSize(0.1)
+                destination_layer.rendererV2().setSymbol(symbol)
+
+                uf.loadTempLayer(destination_layer)
+
+            features = layer.selectedFeatures()
+            closeFeatID = self.nearestFeature(features[0].geometry().asPoint())
+            roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
+            closeFeat = uf.getFeatureById(roads_layer, closeFeatID)
+            closePoint = closeFeat.geometry().centroid().asPoint()
+            # choose location function will actually add it (and remove an older one)
+            self.chooseLocation(destination_layer, closePoint)
+
+        routeLength = self.calculateRoute()
+        self.activateCanvas()
+
+        # calculate route info
         routeLength = routeLength/1000
         routeTime = str(int(0.5 * routeLength))
         routeLength = "{:.1f}".format(routeLength)
@@ -575,10 +658,21 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
 
 
+
+
+
     # page 0
     def showMap(self):
         self.Pages.setCurrentIndex(16)
+        self.canvas = self.determineCanvas()
         self.activateCanvas()
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
+        if not location_layer:
+            self.randLocation2()
+        self.zoomToLocation(500)
+        self.canvas.setMapTool(self.toolPan)
+
+
 
     def showWeather(self):
         self.Pages.setCurrentIndex(7)
@@ -591,7 +685,10 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.Pages.setCurrentIndex(2)
         self.canvas = self.determineCanvas()
         self.activateCanvas()
-        self.randLocation2()
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
+        if not location_layer:
+            self.randLocation2()
+        self.zoomToLocation(500)
         self.canvas.setMapTool(self.toolPan)
 
 
@@ -600,7 +697,10 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.Pages.setCurrentIndex(10)
         self.canvas = self.determineCanvas()
         self.activateCanvas()
-        self.randLocation2()
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
+        if not location_layer:
+            self.randLocation2()
+        self.zoomToLocation(500)
         self.canvas.setMapTool(self.toolPan)
 
 
@@ -614,12 +714,10 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
     def stayLocation(self):
 
-        # self.randLocation2()
-        # self.canvas.setMapTool(self.toolPan)
         self.Pages.setCurrentIndex(9)
         self.activateCanvas()
 
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
         roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
         feat = location_layer.getFeatures().next()
         point = feat.geometry().asPoint()
@@ -644,9 +742,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.Pages.setCurrentIndex(1)
 
-
         # select second point for routing/ end street for routing
-
         roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
 
         self.iface.setActiveLayer(roads_layer)
@@ -655,14 +751,14 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.canvas = self.determineCanvas()
         self.activateCanvas()
 
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
 
         feat = location_layer.getFeatures().next()
         location_layer.select(feat.id())
 
         # self.zoomToSelectedFeature(1, location_layer)
         # self.canvas.zoomByFactor(0.2)
-        self.zoomToLocation()
+        self.zoomToLocation(500)
 
         self.canvas.setMapTool(self.toolPan)
 
@@ -674,11 +770,11 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.Pages.setCurrentIndex(5)
 
         # initialize obstacle_temp layer
-        obstacle_temp = uf.getLegendLayerByName(self.iface, "obstacle_temp")
+        obstacle_temp = uf.getLegendLayerByName(self.iface, "Obstacle_Temp")
         if not obstacle_temp:
             obstacle_layer = uf.getLegendLayerByName(self.iface, "Obstacles")
 
-            obstacle_temp = uf.createTempLayer('obstacle_temp', 'POINT', obstacle_layer.crs().postgisSrid(), [], [])
+            obstacle_temp = uf.createTempLayer('Obstacle_Temp', 'POINT', obstacle_layer.crs().postgisSrid(), [], [])
             symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'yellow'})
             symbol.setSize(3)
             obstacle_temp.rendererV2().setSymbol(symbol)
@@ -686,7 +782,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             uf.loadTempLayer(obstacle_temp)
 
         self.activateCanvas()
-        self.zoomToLocation()
+        self.zoomToLocation(500)
 
     def helpAtEmergency(self):
 
@@ -700,7 +796,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
         obstacles_layer = uf.getLegendLayerByName(self.iface, "Obstacles")
-        obstacles_temp = uf.getLegendLayerByName(self.iface, "obstacle_temp")
+        obstacles_temp = uf.getLegendLayerByName(self.iface, "Obstacle_Temp")
         if obstacles_temp:
             QgsMapLayerRegistry.instance().removeMapLayers([obstacles_temp])
 
@@ -737,7 +833,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
     def correctLocationHelp(self):
         self.Pages.setCurrentIndex(4)
         self.activateCanvas()
-        self.zoomToLocation()
+        self.zoomToLocation(500)
 
 
     # populate table
@@ -747,7 +843,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
 
         # get start point from location layer
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
         startFeat = uf.getLastFeature(location_layer)
         startPoint = startFeat.geometry().centroid().asPoint()
 
@@ -793,9 +889,12 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.table_emergencies.horizontalHeader().setResizeMode(5, QtGui.QHeaderView.ResizeToContents)
         self.table_emergencies.horizontalHeader().setResizeMode(6, QtGui.QHeaderView.ResizeToContents)
         #self.table_hospital.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.Stretch)
-        self.table_emergencies.resizeRowsToContents()
+        #self.table_emergencies.resizeRowsToContents()
         self.table_emergencies.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
         self.table_emergencies.verticalHeader().setVisible(False)
+        self.table_emergencies.verticalHeader().setResizeMode(QtGui.QHeaderView.Fixed)
+        self.table_emergencies.verticalHeader().setDefaultSectionSize(30)
+
 
         # select first/closest item
 
@@ -826,13 +925,12 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.Pages.setCurrentIndex(3)
         self.removeSelectionAll()
 
-
         # initialize destination layer
-        destination_layer = uf.getLegendLayerByName(self.iface, "destination")
+        destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
         if not destination_layer:
 
             emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
-            destination_layer = uf.createTempLayer('destination', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
+            destination_layer = uf.createTempLayer('Destination', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
 
             symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'red'})
             symbol.setSize(3)
@@ -842,7 +940,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.activateCanvas()
 
-        self.zoomToLocation()
+        self.zoomToLocation(1000)
         roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
         self.iface.setActiveLayer(roads_layer)
         self.canvas.setMapTool(self.toolPan)
@@ -857,7 +955,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         shelter_layer = uf.getLegendLayerByName(self.iface, "Shelters")
 
         # get start point from location layer
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
         startFeat = uf.getLastFeature(location_layer)
         startPoint = startFeat.geometry().centroid().asPoint()
 
@@ -874,7 +972,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
             if str(name) == 'NULL':
                 name = type
-            namename = name + '\n' + '(' + type + ')'
+            namename = name + ' (' + type + ')'
             values.append((feature.id(), namename, dist))
 
         values.sort(key=lambda element: element[2], reverse=False)
@@ -893,6 +991,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.table_shelter.resizeRowsToContents()
         self.table_shelter.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
         self.table_shelter.verticalHeader().setVisible(False)
+        self.table_shelter.verticalHeader().setDefaultSectionSize(30)
 
 
         # select first/closest item, or better whole row
@@ -915,7 +1014,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         hospital_layer = uf.getLegendLayerByName(self.iface, "Hospitals")
 
         # get start point from location layer
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
         startFeat = uf.getLastFeature(location_layer)
         startPoint = startFeat.geometry().centroid().asPoint()
 
@@ -947,6 +1046,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.table_hospital.resizeRowsToContents()
         self.table_hospital.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
         self.table_hospital.verticalHeader().setVisible(False)
+        self.table_hospital.verticalHeader().setDefaultSectionSize(30)
 
 
         # select first/closest item, or better whole row
@@ -974,15 +1074,20 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         uf.showMessage(self.iface, 'The emergency has been removed from the list!', type='Info', lev=3, dur=4)
 
 
-    def notDeleteEmergency(self):
-
-        self.Pages.setCurrentIndex(11)
-        self.activateCanvas()
-        self.showEmergency()
-
     # page 17
     def startNavigation(self):
-        self.Pages.setCurrentIndex(19)
+
+        if self.Pages.currentIndex() == 17:
+            self.Pages.setCurrentIndex(19)
+
+        elif self.Pages.currentIndex() == 23:
+            self.Pages.setCurrentIndex(24)
+
+        elif self.Pages.currentIndex() == 22:
+            self.Pages.setCurrentIndex(25)
+
+        elif self.Pages.currentIndex() == 6:
+            self.Pages.setCurrentIndex(26)
 
 
 
@@ -998,7 +1103,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
 
-        rand_location = uf.createTempLayer('location', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
+        rand_location = uf.createTempLayer('Location', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
 
         feat = QgsFeature(rand_location.pendingFields())
 
@@ -1029,7 +1134,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         rand_location.removeSelection()
         rand_location.select(feat.id())
 
-        self.zoomToLocation()
         self.canvas.refresh()
 
 
@@ -1058,30 +1162,31 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             # choose first location to help          # choose first location to help out
             if self.Pages.currentIndex() == 2 or self.Pages.currentIndex() == 10:
 
-                randloc_layer = uf.getLegendLayerByName(self.iface, "location")
+                randloc_layer = uf.getLegendLayerByName(self.iface, "Location")
 
                 self.chooseLocation(randloc_layer, mapPoint)
 
 
-            # choose destination
-            elif self.Pages.currentIndex() == 3 or self.Pages.currentIndex() == 11:
+            # choose destination by clicking
+            elif self.Pages.currentIndex() == 3:
 
                 roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
                 roads_layer.removeSelection()
-                destination_layer = uf.getLegendLayerByName(self.iface, "destination")
+                destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
 
-                # if not destination_layer:
-                #
-                #     emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
-                #
-                #     destination_layer = uf.createTempLayer('destination', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
-                #
-                #     symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'red'})
-                #     symbol.setSize(3)
-                #     destination_layer.rendererV2().setSymbol(symbol)
-                #
-                #     uf.loadTempLayer(destination_layer)
-                #     self.activateCanvas()
+                #this is only still needed if user doesn't come from choose other, e.g. comes back from route
+                if not destination_layer:
+
+                    emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
+
+                    destination_layer = uf.createTempLayer('destination', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
+
+                    symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'red'})
+                    symbol.setSize(3)
+                    destination_layer.rendererV2().setSymbol(symbol)
+
+                    uf.loadTempLayer(destination_layer)
+                    self.activateCanvas()
 
                 self.chooseLocation(destination_layer, mapPoint)
 
@@ -1090,7 +1195,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             # choose blocking location
             elif self.Pages.currentIndex() == 5:
 
-                obstacle_temp = uf.getLegendLayerByName(self.iface, "obstacle_temp")
+                obstacle_temp = uf.getLegendLayerByName(self.iface, "Obstacle_Temp")
                 roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
 
                 #this is only still needed if user doesn't come from helpAtEmergency, e.g. clicks save blocking before clicks choose blocked roads
@@ -1121,11 +1226,11 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # this function lets the user set his own location and deletes the old one
         # and deletes the previous one if the user clicks multiple times
-        # additionally it is used to save the obstacles
+        # additionally it is used to save the obstacles and destinations for shelter/hospital/emergency
 
         layer.startEditing()
 
-        if layer.featureCount() > 0 and layer.name() != "obstacle_temp":
+        if layer.featureCount() > 0 and layer.name() != "Obstacle_Temp":
             feat_old = uf.getLastFeature(layer)
             layer.deleteFeature(feat_old.id())
 
@@ -1174,7 +1279,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         roads_layer.select(sfeat)
 
         # add the centroid of the searched road to the destionation layer
-        destination_layer = uf.getLegendLayerByName(self.iface, "destination")
+        destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
 
         streetFeat = uf.getFeatureById(roads_layer, sfeat)
 
@@ -1184,7 +1289,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         canvas = self.determineCanvas()
 
         self.canvas.zoomToSelected(roads_layer)
-        self.canvas.zoomByFactor(4)
+        self.canvas.zoomByFactor(10)
 
         # return the featureID
         return sfeat
@@ -1287,12 +1392,13 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         road_layer = uf.getLegendLayerByName(self.iface, "Roads")
 
 
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
+        location_layer.removeSelection()
         startFeat = uf.getLastFeature(location_layer)
         startPoint = startFeat.geometry().centroid().asPoint()
         startID = self.nearestFeature(startPoint)
 
-        destination_layer = uf.getLegendLayerByName(self.iface, "destination")
+        destination_layer = uf.getLegendLayerByName(self.iface, "Destination")
         if destination_layer:
             endFeat = uf.getLastFeature(destination_layer)
             endPoint = endFeat.geometry().centroid().asPoint()
@@ -1365,7 +1471,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # zoom on route
         layer = uf.getLegendLayerByName(self.iface, "Roads")
-        self.zoomToSelectedFeature(1.7, layer)
+        self.zoomToSelectedFeature(1.5, layer)
         layer.removeSelection()
 
         # length of route
@@ -1382,13 +1488,13 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # create temp layer with point
 
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
         QgsMapLayerRegistry.instance().removeMapLayers([location_layer])
 
 
 
         emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
-        emergency_temp = uf.getLegendLayerByName(self.iface, "emergency_temp")
+        emergency_temp = uf.getLegendLayerByName(self.iface, "Emergency_Temp")
 
 
         if emergency_temp:
@@ -1396,7 +1502,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             QgsMapLayerRegistry.instance().removeMapLayers([emergency_temp])
 
 
-        emergency_temp = uf.createTempLayer('emergency_temp', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
+        emergency_temp = uf.createTempLayer('Emergency_Temp', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
 
         symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'yellow'})
         symbol.setSize(3)
@@ -1421,8 +1527,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
 
         # first get the point, either from location or emergency_temp layer
-        emergency_temp = uf.getLegendLayerByName(self.iface, "emergency_temp")
-        location_layer = uf.getLegendLayerByName(self.iface, "location")
+        emergency_temp = uf.getLegendLayerByName(self.iface, "Emergency_Temp")
+        location_layer = uf.getLegendLayerByName(self.iface, "Location")
 
         if location_layer:
             point = location_layer.getFeatures().next()
@@ -1440,7 +1546,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         emergency_layer.dataProvider().updateExtents()
         self.iface.setActiveLayer(emergency_layer)
         self.canvas.refresh()
-        uf.showMessage(self.iface, 'Your emergency has been added to the list!', type='Info', lev=3, dur=4)
+        uf.showMessage(self.iface, 'Your emergency has been added to the list!', type='Info', lev=3, dur=6)
 
 
 
@@ -1472,7 +1578,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         self.canvas.refresh()
 
-        uf.showMessage(self.iface, 'Your information has been saved succesfully!', type='Info', lev=3, dur=4)
+        #uf.showMessage(self.iface, 'Your information has been saved succesfully!', type='Info', lev=3, dur=4)
 
 
     def selectSelectedItem(self):
@@ -1522,8 +1628,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         layer.select(int(featID))
 
 
-        features = layer.selectedFeatures()
-        self.nearestFeature(features[0].geometry().asPoint())
+        #features = layer.selectedFeatures()
+        #self.nearestFeature(features[0].geometry().asPoint())
 
 
     def aboutApp(self):

@@ -23,6 +23,8 @@
 from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, Qt, QPoint
 from PyQt4.QtGui import QAction, QIcon
 #from PyQt4 import QtGui, QtCore, uic
+from . import utility_functions as uf
+
 
 # Initialize Qt resources from file resources.py
 import resources
@@ -230,9 +232,9 @@ class StormHelpClass:
 
             # show the dockwidget
             # TODO: fix to allow choice of dock location
-            #self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
-            self.dockwidget.setFloating(True)
-            self.dockwidget.move(QPoint(200, 100))
+            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
+            #self.dockwidget.setFloating(True)
+            #self.dockwidget.move(QPoint(200, 100))
 
             self.dockwidget.setWindowTitle("Storm Help")
             self.dockwidget.show()
