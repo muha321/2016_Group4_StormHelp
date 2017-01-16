@@ -129,35 +129,21 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.activateCanvas()
         self.button_showMap.clicked.connect(self.showMap)
         self.button_showWeather.clicked.connect(self.showWeather)
-
         self.button_needHelp.clicked.connect(self.needHelp)
         self.button_needHelp.setStyleSheet("font: bold 14px;")
-
         self.button_wantToHelp.clicked.connect(self.wantToHelp)
         self.button_wantToHelp.setStyleSheet("font: bold 14px;")
-
         self.button_showWeather.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/weather3.PNG'))
-
 
         # page 1 - leave or stay
         self.button_leave.clicked.connect(self.leaveLocation)
         self.button_stay.clicked.connect(self.stayLocation)
         self.label_here1.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
 
-
-
         # page 2
         self.button_correctLocation.clicked.connect(self.correctLocationRoute)
         self.button_wrongLocation.clicked.connect(self.activateLocalization)
         self.label_here2.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
-
-        #pen = QtGui.QPen()
-        #pen.setStyle(Qt.DashDotLine)
-        #self.label_here2.setTextFormat(QtCore.Qt.RichText)
-        # self.label_here2.setText("<font size = 15 color = yellow > You are here </font> ")
-        # dse = QtGui.QGraphicsDropShadowEffect()
-        # dse.setBlurRadius(100)
-        # self.label_here2.setGraphicsEffect(dse)
 
         # page 3 - choose destination of route
         self.button_searchStreet.clicked.connect(self.searchStreet)
@@ -171,7 +157,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_helpAtEmergency.clicked.connect(self.helpAtEmergency)
         self.button_helpAtEmergency.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/couple2.png'))
         self.label_here4.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
-
 
         # page 5 - choose and save blocking
         self.button_chooseRoad.clicked.connect(self.activateLocalization)
@@ -190,20 +175,17 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_saveInformation.clicked.connect(self.saveInformation)
         self.button_call112.clicked.connect(self.call112)
 
-
         # page 10 - where are you (to start helping out)
         #self.button_correctLocation10.clicked.connect(self.showEmergency)
         self.button_correctLocation10.clicked.connect(self.correctLocationHelp)
         self.button_wrongLocation10.clicked.connect(self.activateLocalization)
         self.label_here10.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
 
-
         # page 11 - choose emergency and calculate route
         self.table_emergencies.cellClicked.connect(self.selectSelectedItem)
         self.button_calculateRoute11.clicked.connect(self.showRouteInfo)
         self.button_deleteEmergencyCheck11.clicked.connect(self.deleteEmergencyCheck)
         self.button_showOnMap.clicked.connect(self.showOnMap)
-
 
         # page 12 - choose safehouse, hospital or other destination
         self.button_showOther.clicked.connect(self.showOther)
@@ -213,19 +195,15 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.button_showShelter.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/house2.png'))
         self.button_showHospital.setIcon(QtGui.QIcon(':/plugins/StormHelpClass/icons/cross2.png'))
 
-
         # page 13 - shelters
         self.table_shelter.cellClicked.connect(self.selectSelectedItem)
         self.button_calculateRoute13.clicked.connect(self.showRouteInfo)
         self.button_showOnMap13.clicked.connect(self.showOnMap)
 
-
         # page 14 - hospitals
         self.table_hospital.cellClicked.connect(self.selectSelectedItem)
         self.button_calculateRoute14.clicked.connect(self.showRouteInfo)
         self.button_showOnMap14.clicked.connect(self.showOnMap)
-
-
 
         # page 15 - delete emergency
         self.button_deleteEmergency.clicked.connect(self.deleteEmergency)
@@ -234,7 +212,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         # page 16 - shows full screen map
         self.button_goBack16.clicked.connect(self.goBack)
         self.label_here16.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/youarehere2.png'))
-
 
         # page 17 - show route emergency
         self.button_startNavigation.clicked.connect(self.startNavigation)
@@ -268,10 +245,9 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         self.label_navigation26.setPixmap(QtGui.QPixmap(':/plugins/StormHelpClass/icons/route.PNG'))
 
 
-
-
     def handleDoubleClick(self, point, buttons):
         print('doubleclick')
+
 
     def goBack(self):
 
@@ -765,7 +741,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
 
     # page 4 - choose report blocking or help at emergency
-
     def reportBlocking(self):
         self.Pages.setCurrentIndex(5)
 
@@ -1090,7 +1065,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             self.Pages.setCurrentIndex(26)
 
 
-
     # page 18
     def changeRoute(self):
 
@@ -1138,7 +1112,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
 
 
-
     # get the point when the user clicks on the canvas
     def activateLocalization(self):
 
@@ -1179,7 +1152,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
                     emergency_layer = uf.getLegendLayerByName(self.iface, "Emergencies")
 
-                    destination_layer = uf.createTempLayer('destination', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
+                    destination_layer = uf.createTempLayer('Destination', 'POINT', emergency_layer.crs().postgisSrid(), [], [])
 
                     symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'red'})
                     symbol.setSize(3)
@@ -1201,11 +1174,9 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
                 #this is only still needed if user doesn't come from helpAtEmergency, e.g. clicks save blocking before clicks choose blocked roads
                 if not obstacle_temp:
 
-                    print('here')
-
                     obstacle_layer = uf.getLegendLayerByName(self.iface, "Obstacles")
 
-                    obstacle_temp = uf.createTempLayer('obstacle_temp', 'POINT', obstacle_layer.crs().postgisSrid(), [], [])
+                    obstacle_temp = uf.createTempLayer('Obstacle_Temp', 'POINT', obstacle_layer.crs().postgisSrid(), [], [])
                     symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'yellow'})
                     symbol.setSize(3)
                     obstacle_temp.rendererV2().setSymbol(symbol)
@@ -1241,15 +1212,9 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         layer.commitChanges()
         layer.dataProvider().updateExtents()
 
-        # problem is that obstacle_temp and destination layer are not added to the canvas
-        # once they are added to the maplayerregistry canvas needs to be activated again to setLayerSet
-        # but this is annoying
-        # after first time they are in, all work smooth (e.g. when using back key in plugin)
-        # some maybe have empty destination and obstacle temp layer all the time, that would solve it
-        # obstacle temp is fine like this actually, but destination layer not having visible is annoying
 
         self.canvas = self.determineCanvas()
-        self.canvas.refresh()
+        #self.canvas.refresh()
 
 
 
@@ -1482,8 +1447,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
 
 
-
-
     def dispEmergency(self, mapPoint):
 
         # create temp layer with point
@@ -1549,8 +1512,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         uf.showMessage(self.iface, 'Your emergency has been added to the list!', type='Info', lev=3, dur=6)
 
 
-
-
     def saveInformation(self):
 
         self.saveEmergency()
@@ -1600,7 +1561,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
 
         # determine active table
-
         if self.Pages.currentIndex() == 13:
             layer = uf.getLegendLayerByName(self.iface, "Shelters")
             self.table = self.table_shelter
@@ -1627,34 +1587,6 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         featID = self.table.item(row, col).text()
         layer.select(int(featID))
 
-
-        #features = layer.selectedFeatures()
-        #self.nearestFeature(features[0].geometry().asPoint())
-
-
-    def aboutApp(self):
-        website = "http://code.google.com/p/comictagger"
-        email = "comictagger@gmail.com"
-        license_link = "http://www.apache.org/licenses/LICENSE-2.0"
-        license_name = "Apache License 2.0"
-
-        msgBox = QtGui.QMessageBox()
-        msgBox.setWindowTitle(self.tr("About "))
-        msgBox.setTextFormat(QtCore.Qt.RichText)
-        # msgBox.setIconPixmap(
-        #     QtGui.QPixmap(ComicTaggerSettings.getGraphic('about.png')))
-        msgBox.setText("<br><br><br>" +
-                       "<font size = 10 color = red > Hello World </font> " +
-                       " v" +
-                       "version" +
-                       "<br>" +
-                       "&copy;2014 Anthony Beville<br><br>" +
-                       "<a href='{0}'>{0}</a><br><br>".format(website) +
-                       "<a href='mailto:{0}'>{0}</a><br><br>".format(email) +
-                       "License: <a href='{0}'>{1}</a>".format(license_link, license_name))
-
-        msgBox.setStandardButtons(QtGui.QMessageBox.Ok)
-        msgBox.exec_()
 
 
     def messageRoute(self):
