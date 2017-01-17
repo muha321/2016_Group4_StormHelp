@@ -342,7 +342,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             self.Pages.setCurrentIndex(6)
 
 
-        remove_layer = ["Routes", "Buffer"]
+        remove_layer = ["Routes", "Buffer", "Obstacle_Temp"]
         # remove selection on all layers
         layers = QgsMapLayerRegistry.instance().mapLayers().values()
         for layer in layers:
@@ -624,7 +624,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
 
         # calculate route info
         routeLength = routeLength/1000
-        routeTime = str(int(0.5 * routeLength))
+        routeTime = str(int(1.8 * routeLength)+1)
         routeLength = "{:.1f}".format(routeLength)
         label.setTextFormat(QtCore.Qt.RichText)
         label.setText("<font size = 10 color = blue ><b>" + routeTime + " min  </b></font> " +
@@ -750,7 +750,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
             obstacle_layer = uf.getLegendLayerByName(self.iface, "Obstacles")
 
             obstacle_temp = uf.createTempLayer('Obstacle_Temp', 'POINT', obstacle_layer.crs().postgisSrid(), [], [])
-            symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'yellow'})
+            symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'blue'})
             symbol.setSize(3)
             obstacle_temp.rendererV2().setSymbol(symbol)
 
@@ -772,8 +772,7 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         roads_layer = uf.getLegendLayerByName(self.iface, "Roads")
         obstacles_layer = uf.getLegendLayerByName(self.iface, "Obstacles")
         obstacles_temp = uf.getLegendLayerByName(self.iface, "Obstacle_Temp")
-        if obstacles_temp:
-            QgsMapLayerRegistry.instance().removeMapLayers([obstacles_temp])
+
 
         selected_sources = roads_layer.selectedFeatures()
 
@@ -794,7 +793,21 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         canvas = self.determineCanvas()
         self.canvas.refresh()
 
-        uf.showMessage(self.iface, 'The blocking has been saved succesfully!', type='Info', lev=3, dur=4)
+        if obstacles_temp:
+
+            if obstacles_temp.featureCount() > 0:
+
+                QgsMapLayerRegistry.instance().removeMapLayers([obstacles_temp])
+
+                uf.showMessage(self.iface, 'The blocking has been saved succesfully!', type='Info', lev=3, dur=4)
+
+            else:
+
+                uf.showMessage(self.iface, 'No road selected! Try again!', type='Info', lev=2, dur=4)
+
+        else:
+
+            uf.showMessage(self.iface, 'No road selected! Try again!', type='Info', lev=2, dur=4)
 
 
 
@@ -1084,8 +1097,8 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
         rand_x = random.randrange(84500, 100700, 1)
         rand_y = random.randrange(428500, 443900, 1)
 
-        #rand_x = 99918
-        #rand_y = 430193
+        #rand_x = 94790
+        #rand_y = 436014
 
         rand_point = QgsPoint(rand_x, rand_y)
 
@@ -1177,12 +1190,12 @@ class StormHelpClassDockWidget(QtGui.QDockWidget, FORM_CLASS, QgsMapTool, QgsMap
                     obstacle_layer = uf.getLegendLayerByName(self.iface, "Obstacles")
 
                     obstacle_temp = uf.createTempLayer('Obstacle_Temp', 'POINT', obstacle_layer.crs().postgisSrid(), [], [])
-                    symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'yellow'})
+                    symbol = QgsMarkerSymbolV2.createSimple({'name': 'circle', 'color': 'blue'})
                     symbol.setSize(3)
                     obstacle_temp.rendererV2().setSymbol(symbol)
 
                     uf.loadTempLayer(obstacle_temp)
-                    self.activateCanvas()
+                    #self.activateCanvas()
 
                 # get featID of closest road
                 featID = self.nearestFeature(mapPoint)
